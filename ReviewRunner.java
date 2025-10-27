@@ -2,6 +2,9 @@ public class ReviewRunner {
     public static void main(String[] args) {
         double appleScore = analyzeReviews("appleReviews.txt");
         double androidScore = analyzeReviews("androidReviews.txt");
+        System.out.println("iPhone Score: " + appleScore);
+        System.out.println("Android Score: " + androidScore);
+        
         
         if (appleScore > androidScore && (appleScore - androidScore) >= 3) {
             System.out.println("iPhone is significantly better than Android");

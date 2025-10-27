@@ -3,12 +3,22 @@ public class ReviewRunner {
         double appleScore = analyzeReviews("appleReviews.txt");
         double androidScore = analyzeReviews("androidReviews.txt");
         
-        if (appleScore > androidScore) {
+        if (appleScore > androidScore && (appleScore - androidScore) >= 3) {
+            System.out.println("iPhone is significantly better than Android");
+        } 
+        else if (appleScore > androidScore) {
             System.out.println("iPhone is better than Android");
-        } else if (androidScore > appleScore) {
+        } 
+        else if (androidScore > appleScore && (androidScore - appleScore) >= 3) {
+            System.out.println("Android is significantly better than iPhone");
+        }
+        else if (androidScore > appleScore) {
             System.out.println("Android is better than iPhone");
-        } else {
-            System.out.println("iPhone and Android are equally rated");
+        } 
+        else {
+            if (appleScore == androidScore) {
+                System.out.println("iPhone and Android are equally rated");
+            }
         }
     }
     
